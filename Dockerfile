@@ -21,7 +21,7 @@ RUN pnpm exec prisma generate
 COPY . .
 
 # Build the app
-RUN pnpm run build
+RUN NODE_OPTIONS="--max-old-space-size=4096" pnpm run build
 
 # Expose port 3000
 EXPOSE 3000
